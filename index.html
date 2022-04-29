@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>dhaka ami jai so that</h2>
+    <p id="showName"></p>
+</body>
+
+<script>
+    fetch('http://localhost:5000/member')
+        .then(res => res.json())
+        .then(data => {
+            for (const member of data) {
+                document.getElementById('showName').innerText = member.name;
+                console.log(member);
+            }
+        })
+
+</script>
+
+</html>
